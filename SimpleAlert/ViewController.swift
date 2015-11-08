@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     func setup() {
         
         // Set value of seconds
-        seconds = 3
+        seconds = 60
         
         // Enable timer button
         timerButton.enabled = true
@@ -69,8 +69,8 @@ class ViewController: UIViewController {
         if seconds <= 0 {
             timer.invalidate()
             
-            // Create pop-up alert
-            let popUpAlert = UIAlertController(title: "Please update your license", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+            // Create pop-up alert - see Apple's HIG https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/Alerts.html#//apple_ref/doc/uid/TP40006556-CH14-SW2
+            let popUpAlert = UIAlertController(title: "Please Update Your License", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             
             popUpAlert.addAction(UIAlertAction(title: "Enter Licence", style: UIAlertActionStyle.Default, handler: { action in self.setup() } ))
             
